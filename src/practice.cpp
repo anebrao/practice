@@ -39,6 +39,7 @@ int main() {
 	return 0;
 }
 
+// Problem 2 Taken from that github
 bool order2(int &x, int &y) {
 	if (x > y) {
 		int tmp = x;
@@ -51,7 +52,6 @@ bool order2(int &x, int &y) {
 }
 
 // Problem 3
-
 void fillArray(int arr[], int size) {
 	for (int i = 0; i < size; i++) {
 		int r = rand() % 100;
@@ -60,7 +60,7 @@ void fillArray(int arr[], int size) {
 } //fillarray
 
 // Problem 4
-// SEND TO KEVIN
+// This is a new version
 void printArray(int *arr, int size) {
 	for (int i = 0; i < size; i++) {
 		cout << arr[i] << ", ";
@@ -69,7 +69,7 @@ void printArray(int *arr, int size) {
 }
 
 //Problem 5
-
+// this is the one taken from that other github
 void MinFind(int a[], int size, int &min, int &index) {
 	min = a[0];
 	for (int i = 1; i < size; i++) {
@@ -93,13 +93,6 @@ int sum_array(int *arr, int size) {
 	} // if, end condition.
 	return sum;
 }
-int sumArray(int *arr, int n) {
-	if (n == 0) {
-		return arr[0];
-	} else {
-		return arr[n] + sumArray(arr, n - 1);
-	}
-}
 
 int findMin(int *arr, int size) {
 	int y = arr[0];
@@ -111,26 +104,22 @@ int findMin(int *arr, int size) {
 	return y;
 }
 
-// not qui
-// calls the function above and finds the
-// smallest number
-//int somearray(int *arr, int size){
-//	int r = rand() % 5 + 3;
-//	int a = findMin(*arr, (size - r));
-//	return a;
-//}
+// Problem 7b
+int min_array(int a[], int length) {
+	int x = rand() % 5 + 3;
+	int minsum = 10000;
+	int index = 0;
+	for (int i = 0; i <= length - x; i++) {
+		//cout<<i<<endl;
+		sum_array(&a[i], x);
+		if (sum_array(&a[i], x) <= minsum) {
+			minsum = sum_array(&a[i], x);
+			index = i;
+		}
+	}
+	cout << index << endl;
+	return index;
 
-int min_array(int *arr, int size) {
-	//int r = rand() % 5 + 3;
-	//smallestElm(int numArray[], size_t length, int &smallest, int &index)
-	int curr_min = arr[0];
-	for (int i = 1; i < size; i++) {
-		if (arr[i] < curr_min) {
-			curr_min = arr[i];
-		} //if
-	} //for
-	cout << curr_min << endl;
-	return curr_min;
 }
 
 // Problem 8
@@ -172,34 +161,30 @@ bool pali(int a[], int size) {
 		return false;
 }
 
-/*
- // Problem 11
- // first value in the array, the length of the array, the x
- // (the length of the potential palindrome) and a 4th int parameter
- // modified by call by reference that will hold the index in the array
- // of the first value in a palindrome of length x if a palindrome of length x is found.
- bool palindref(int *arr, int size,int x,int &fourth){
- int pos = 0;
- int i = 0;
- while (pos == 0 && i < size) {
- if (a[i] == a[size - i - 1]) {
- pos = 0;
- i++;
- } else {
- pos = 1;
- }
- }
- if (pos == 0)
- return true;
- else
- return false;
+// Problem 11
+// first value in the array, the length of the array, the x
+// (the length of the potential palindrome) and a 4th int parameter
+// modified by call by reference that will hold the index in the array
+// of the first value in a palindrome of length x if a palindrome of length x is found.
+bool palindref(int *arr, int size,int x,int &fourth) {
+	int pos = 0;
+	int i = 0;
+	while (pos == 0 && i < size) {
+		if (arr[i] == arr[size - i - 1]) {
+			pos = 0;
+			i++;
+		} else {
+			pos = 1;
+		}
+	}
+	if (pos == 0)
+	return true;
+	else
+	return false;
 
-
- //return true;
- //return false;
- }
-
- */
+	//return true;
+	//return false;
+}
 
 /*
  // Problem 12
