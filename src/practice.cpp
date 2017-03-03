@@ -19,7 +19,7 @@ int sum_array(int *arr, int size);
 int min_array(int *arr, int size);
 bool pali(int a[], int size);
 int findMin(int *arr, int size);
-int findMin(int *arr, int size);
+
 
 int main() {
 	srand(time(NULL));
@@ -166,7 +166,7 @@ bool pali(int a[], int size) {
 // (the length of the potential palindrome) and a 4th int parameter
 // modified by call by reference that will hold the index in the array
 // of the first value in a palindrome of length x if a palindrome of length x is found.
-bool palindref(int *arr, int size,int x,int &fourth) {
+bool palindref(int *arr, int size, int x, int &fourth) {
 	int pos = 0;
 	int i = 0;
 	while (pos == 0 && i < size) {
@@ -178,42 +178,43 @@ bool palindref(int *arr, int size,int x,int &fourth) {
 		}
 	}
 	if (pos == 0)
-	return true;
+		return true;
 	else
-	return false;
+		return false;
 
 	//return true;
 	//return false;
 }
 
+// Problem 12
+// needs to be refactored
+// This one has 4 input parameters: the int array
+// (or the address of the first value in the array), the size of the array,
+// and 2 int parameters that are modified within the function using call by reference.
+// should return the
+void finalpalin(int arr[], int size) {
+	int x;
+	int y;
+	int pos = 0;
+	int i = 0;
+	while (pos == 0 && i < size) {
+		if (arr[i] == arr[size - i - 1]) {
+			pos = 0;
+			i++;
+		} else {
+			pos = 1;
+		}
+	}
+	if (pos == 0)
+		return ;
+	else
+		return ;
+	while (x == 0 && size > 0) {
+
+	}
+}
+
 /*
- // Problem 12
- // This one has 4 input parameters: the int array
- // (or the address of the first value in the array), the size of the array,
- // and 2 int parameters that are modified within the function using call by reference.
- void finalpalin(int arr[], int size){
- int x;
- int y;
- int pos = 0;
- int i = 0;
- while (pos == 0 && i < size) {
- if (a[i] == a[size - i - 1]) {
- pos = 0;
- i++;
- } else {
- pos = 1;
- }
- }
- if (pos == 0)
- return true;
- else
- return false;
- while (x == 0 && size > 0){
-
- }
- }
-
-
  // Problem 15
  // input parameter an array of ints between 0 and 50 (including 50) and an int pointer
  //representing the length of this array.
