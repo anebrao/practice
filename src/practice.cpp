@@ -193,9 +193,9 @@ bool palindref(int *arr, int size, int x, int &fourth) {
 // (or the address of the first value in the array), the size of the array,
 // and 2 int parameters that are modified within the function using call by reference.
 // should return the
-void finalpalin(int arr[], int size) {
-	int x;
-	int y;
+void finalpalin(int arr[], int size, int &x, int &y) {
+	 x = 0;
+	 y = 0;
 	int pos = 0;
 	int i = 0;
 	while (pos == 0 && i < size) {
