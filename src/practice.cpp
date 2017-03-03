@@ -167,7 +167,7 @@ bool pali(int a[], int size) {
 // (the length of the potential palindrome) and a 4th int parameter
 // modified by call by reference that will hold the index in the array
 // of the first value in a palindrome of length x if a palindrome of length x is found.
-bool palindref(int *arr, int size, int x, int &fourth) {
+bool palindref(int arr[], int size, int x, int &fourth) {
 	int i = 0;
 	    while(i <= (size-x)){
 	        if(pali(&arr[i], size)){
@@ -186,25 +186,14 @@ bool palindref(int *arr, int size, int x, int &fourth) {
 // and 2 int parameters that are modified within the function using call by reference.
 // should return the
 void finalpalin(int arr[], int size, int &x, int &y) {
-	 x = 0;
-	 y = 0;
-	int pos = 0;
-	int i = 0;
-	while (pos == 0 && i < size) {
-		if (arr[i] == arr[size - i - 1]) {
-			pos = 0;
-			i++;
-		} else {
-			pos = 1;
-		}
-	}
-	if (pos == 0)
-		return ;
-	else
-		return ;
-	while (x == 0 && size > 0) {
-
-	}
+	int i = size;
+	    while(i > 0){
+	        if(palindref(&array[0], size, i, x)){
+	            y = i;
+	            return;// return here because we have found the largest palindrome
+	        }
+	        i--;
+	    }
 }
 
 /*
