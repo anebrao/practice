@@ -20,7 +20,6 @@ int min_array(int *arr, int size);
 bool pali(int a[], int size);
 int findMin(int *arr, int size);
 
-
 int main() {
 	srand(time(NULL));
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
@@ -169,15 +168,15 @@ bool pali(int a[], int size) {
 // of the first value in a palindrome of length x if a palindrome of length x is found.
 bool palindref(int arr[], int size, int x, int &fourth) {
 	int i = 0;
-	    while(i <= (size-x)){
-	        if(pali(&arr[i], size)){
-	            fourth = i;
-	            return true;
-	        }
-	        i++;
-	    }
-	    return false;
+	while (i <= (size - x)) {
+		if (pali(&arr[i], size)) {
+			fourth = i;
+			return true;
+		}
+		i++;
 	}
+	return false;
+}
 
 // Problem 12
 // needs to be refactored
@@ -187,13 +186,13 @@ bool palindref(int arr[], int size, int x, int &fourth) {
 // should return the
 void finalpalin(int arr[], int size, int &x, int &y) {
 	int i = size;
-	    while(i > 0){
-	        if(palindref(&arr[0], size, i, x)){
-	            y = i;
-	            return;
-	        }
-	        i--;
-	    }
+	while (i > 0) {
+		if (palindref(&arr[0], size, i, x)) {
+			y = i;
+			return;
+		}
+		i--;
+	}
 }
 
 /*
