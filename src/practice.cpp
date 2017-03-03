@@ -208,7 +208,7 @@ int some_name15(int arr[], int *length){
 	int x = 10;
 	int y = 40;
 	if (x < length < y){
-		newarr = // need to make a new array but I'm not taking out the old ones.... ???
+		newarr = // need to make a new array but I'm not taking out the old ones.... probably should be a for loop
 	}
 
 }
@@ -227,5 +227,8 @@ Problem 16
   array of ints.
   */
 int some_name16(int arr1[],int arr2[], int size1, int size2, int &length){
+	int x = arr1[0];
+	int y = arr2[0];
+	// for
 	return 0;
 }
