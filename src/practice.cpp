@@ -188,9 +188,9 @@ bool palindref(int arr[], int size, int x, int &fourth) {
 void finalpalin(int arr[], int size, int &x, int &y) {
 	int i = size;
 	    while(i > 0){
-	        if(palindref(&array[0], size, i, x)){
+	        if(palindref(&arr[0], size, i, x)){
 	            y = i;
-	            return;// return here because we have found the largest palindrome
+	            return;
 	        }
 	        i--;
 	    }
