@@ -19,7 +19,7 @@ int sum_array(int *arr, int size);
 int min_array(int *arr, int size);
 bool pali(int a[], int size);
 int findMin(int *arr, int size);
-void some_name15(int arr[], int length);
+void some_name15(int arr[], int *length);
 
 int main() {
 	srand(time(NULL));
@@ -204,12 +204,12 @@ void finalpalin(int arr[], int size, int &x, int &y) {
  The length parameter is updated to the length of the newly created array and the new array is returned
  (Note that in your main you can create the input array of random numbers using the function you wrote above.)
  */
-void some_name15(int arr[], int length) {
+void some_name15(int arr[], int *length) {
 	int count = 0;
-	for(int i = 0; i <length; i++){
+	for(int i = 0; i < &length; i++){
 			if(arr[i]==(i > 10 and i < 40))
 			{
-				for(int j=i; j<(length-1); j++)
+				for(int j=i; j<( &length-1); j++)
 				{
 					arr[j]=arr[j+1];
 				}
