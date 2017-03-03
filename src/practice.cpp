@@ -197,36 +197,47 @@ void finalpalin(int arr[], int size, int &x, int &y) {
 }
 
 /*
-Problem 15
-Write a function that takes as an input parameter an array of ints between 0 and 50 (including 50)
-and an int pointer representing the length of this array. The function creates a new, most likely
-shorter, array of ints by removing all the values below 10 and above 40 from the input array.
-The length parameter is updated to the length of the newly created array and the new array is returned
-(Note that in your main you can create the input array of random numbers using the function you wrote above.)
-*/
-int some_name15(int arr[], int *length){
-	int x = 10;
-	int y = 40;
-	if (x < length < y){
-		newarr = // need to make a new array but I'm not taking out the old ones.... probably should be a for loop
+ Problem 15
+ Write a function that takes as an input parameter an array of ints between 0 and 50 (including 50)
+ and an int pointer representing the length of this array. The function creates a new, most likely
+ shorter, array of ints by removing all the values below 10 and above 40 from the input array.
+ The length parameter is updated to the length of the newly created array and the new array is returned
+ (Note that in your main you can create the input array of random numbers using the function you wrote above.)
+ */
+int some_name15(int arr[], int *length) {
+	int accu = 0;
+	int accu2 = 0;
+
+	for (int i = 0; i < length; i++) {
+		if (i < 10) {
+			accu++;
+		}
 	}
-	return newarr;
+	cout << accu << endl;
+	int arr1[accu];
+	for (int i = 0; i < length; i++) {
+		if (10 < i < 40) {
+			arr1[i] = i;
+		}
+
+	}
+	return arr1, length;
 }
 
 /*
-Problem 16
+ Problem 16
  Write a function that takes as input parameters two integer arrays, along with the size of the
  first array, the size of the second array, and a third parameter that will be modified using call
  by reference to be the length of the two arrays merged together. This function creates a new
  (dynamically allocated) array by taking the first value of the first array and placing it at location
-  0, then the first value of the second array and placing it at location 1, then the second value of the
-  first array and placing it at location 2, then the second value of the second array and placing it at
-  location 3, etc., until both arrays are completely in the new array. Note that most likely one array
-  will be longer than the other. Once you’ve finished copying over the shorter array, the rest of the
-  second array is copied over to the end of the new array. The function returns the newly created merged
-  array of ints.
-  */
-int some_name16(int arr1[],int arr2[], int size1, int size2, int &length){
+ 0, then the first value of the second array and placing it at location 1, then the second value of the
+ first array and placing it at location 2, then the second value of the second array and placing it at
+ location 3, etc., until both arrays are completely in the new array. Note that most likely one array
+ will be longer than the other. Once you’ve finished copying over the shorter array, the rest of the
+ second array is copied over to the end of the new array. The function returns the newly created merged
+ array of ints.
+ */
+int some_name16(int arr1[], int arr2[], int size1, int size2, int &length) {
 	int x = arr1[0];
 	int y = arr2[0];
 	// for
