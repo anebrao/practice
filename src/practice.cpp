@@ -168,24 +168,16 @@ bool pali(int a[], int size) {
 // modified by call by reference that will hold the index in the array
 // of the first value in a palindrome of length x if a palindrome of length x is found.
 bool palindref(int *arr, int size, int x, int &fourth) {
-	int pos = 0;
 	int i = 0;
-	while (pos == 0 && i < size) {
-		if (arr[i] == arr[size - i - 1]) {
-			pos = 0;
-			i++;
-		} else {
-			pos = 1;
-		}
+	    while(i <= (size-x)){
+	        if(pali(&arr[i], size)){
+	            fourth = i;
+	            return true;
+	        }
+	        i++;
+	    }
+	    return false;
 	}
-	if (pos == 0)
-		return true;
-	else
-		return false;
-
-	//return true;
-	//return false;
-}
 
 // Problem 12
 // needs to be refactored
