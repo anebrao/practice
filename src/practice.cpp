@@ -210,7 +210,7 @@ int some_name15(int arr[], int *length){
 	if (x < length < y){
 		newarr = // need to make a new array but I'm not taking out the old ones.... probably should be a for loop
 	}
-
+	return newarr;
 }
 
 /*
