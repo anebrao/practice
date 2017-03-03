@@ -19,7 +19,7 @@ int sum_array(int *arr, int size);
 int min_array(int *arr, int size);
 bool pali(int a[], int size);
 int findMin(int *arr, int size);
-int some_name15(int arr[], int *length);
+void some_name15(int arr[], int length);
 
 int main() {
 	srand(time(NULL));
@@ -204,24 +204,21 @@ void finalpalin(int arr[], int size, int &x, int &y) {
  The length parameter is updated to the length of the newly created array and the new array is returned
  (Note that in your main you can create the input array of random numbers using the function you wrote above.)
  */
-int some_name15(int arr[], int *length) {
-	int accu = 0;
-	int accu2 = 0;
-
-	for (int i = 0; i < length; i++) {
-		if (i < 10) {
-			accu++;
+void some_name15(int arr[], int length) {
+	int count = 0;
+	for(int i = 0; i <length; i++){
+			if(arr[i]==(i > 10 and i < 40))
+			{
+				for(int j=i; j<(length-1); j++)
+				{
+					arr[j]=arr[j+1];
+				}
+				count++;
+				break;
+			}
+			cout << arr << endl;
+			return ;
 		}
-	}
-	cout << accu << endl;
-	int arr1[accu];
-	for (int i = 0; i < length; i++) {
-		if (10 < i < 40) {
-			arr1[i] = i;
-		}
-
-	}
-	return arr1, length;
 }
 
 /*
@@ -236,10 +233,11 @@ int some_name15(int arr[], int *length) {
  will be longer than the other. Once you’ve finished copying over the shorter array, the rest of the
  second array is copied over to the end of the new array. The function returns the newly created merged
  array of ints.
- */
+
 int some_name16(int arr1[], int arr2[], int size1, int size2, int &length) {
 	int x = arr1[0];
 	int y = arr2[0];
 	// for
 	return 0;
 }
+*/
