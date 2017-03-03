@@ -162,6 +162,7 @@ bool pali(int a[], int size) {
 }
 
 // Problem 11
+// needs to be refactored
 // first value in the array, the length of the array, the x
 // (the length of the potential palindrome) and a 4th int parameter
 // modified by call by reference that will hold the index in the array
